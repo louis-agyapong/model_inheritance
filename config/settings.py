@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # Local apps
+    "apps.quiz",
     # External apps
     "django_extensions",
 ]
@@ -72,7 +73,7 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 # Parse database connection url strings like psql://user:pass@127.0.0.1:8458/dbname
 
-DATABASES = {"default": dj_database_url.config("SQLITE_URL")}
+DATABASES = {"default": dj_database_url.config(default=config("SQLITE_URL"))}
 
 
 # Password validation
